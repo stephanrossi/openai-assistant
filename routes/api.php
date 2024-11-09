@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArquivoController;
 use App\Http\Controllers\OpenAIController;
+use App\Http\Controllers\PdfController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,8 @@ Route::post('/openai/run-assistant', [OpenAIController::class, 'runAssistant']);
 
 Route::get('/base64', [ArquivoController::class, 'receberArquivoBase64']);
 Route::post('/base642', [ArquivoController::class, 'converterArquivoParaBase64']);
+
+Route::post('/pdf', [PdfController::class, 'gerarArquivo']);
+
+Route::get('/ping', [PdfController::class, 'ping']);
+

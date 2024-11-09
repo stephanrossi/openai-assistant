@@ -10,5 +10,3 @@ Route::get('/', function () {
 Route::get('/upload', function () {
     return view('upload'); // Carrega a view 'upload.blade.php'
 })->name('upload.form');
-
-Route::post('/upload-file', [FileUploadController::class, 'upload'])->name('upload.file');
